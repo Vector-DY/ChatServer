@@ -9,6 +9,7 @@
 * 基于Mysql实现数据落地存储并使用连接池提高存取性能
 
 ### USAGE
+需要配置boost + muduo + redis + mysql + nginx + cmake环境
 ```
 $ cd ./ChatServer/build/
 $ cmake ..

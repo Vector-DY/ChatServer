@@ -10,7 +10,7 @@
 
 ### USAGE
 ```
-$ cd ./chat/build/
+$ cd ./ChatServer/build/
 $ cmake ..
 $ make
 ```

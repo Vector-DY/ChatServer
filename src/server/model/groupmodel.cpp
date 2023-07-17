@@ -85,7 +85,7 @@ vector<Group> GroupModel::queryGroups(int userid)
 vector<int> GroupModel::queryGroupUsers(int userid, int groupid)
 {
     char sql[1024] = {0};
-    sprintf(sql, "select userid from groupuser where groupid=%d and userid!=%d", groupid, userid);
+    sprintf(sql, "select userid from GroupUser where groupid=%d and userid!=%d", groupid, userid);
 
     vector<int> idVec;
     MySQL mysql;

@@ -1,6 +1,7 @@
 #ifndef CHATSERVICE_H
 #define CHATSERVICE_H
 #include "json.hpp"
+#include "redis.hpp"
 #include "usermodel.hpp"
 #include "groupmodel.hpp"
 #include "friendmodel.hpp"
@@ -46,6 +47,8 @@ public:
     void reset();
     // 获取消息对应的处理器
     MsgHandler getHandler(int msgid);
+    // 从redis消息队列中获取订阅的消息
+    void handleRedisSubscribeMessage(int, string);
 private:
     ChatService();
     // 存储消息id和其对应的业务处理方法
@@ -68,6 +71,9 @@ private:
 
     // 群聊类对象
     GroupModel _groupModel;
+
+    // redis操作对象
+    Redis _redis;
 };
 
 
